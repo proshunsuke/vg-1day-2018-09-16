@@ -1,4 +1,3 @@
-/.env
 /db/dbconfig.yml
 /mysql-data/
 /bin/docker-compose
