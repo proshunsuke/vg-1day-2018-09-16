@@ -49,10 +49,6 @@ migrate/dryrun:
 db/reset:
 	$(DOCKER_COMPOSE_CMD) exec mysql mysql -u treasurenavi -p$(PASS) -e "DROP DATABASE treasurenavi; CREATE DATABASE treasurenavi;"
 
-test:
-	$(MAKE) query FILE=app/sql/q2.sql
-	$(MAKE) query FILE=app/sql/q3.sql
-
 $(DOCKER_COMPOSE): $(BIN_DIR)
 	curl -L https://github.com/docker/compose/releases/download/$(DOCKER_COMPOSE_VERSION)/docker-compose-$(shell uname -s)-$(shell uname -m) > $@
 	chmod +x $@
